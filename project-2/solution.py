@@ -129,11 +129,13 @@ with genetic:
 
     best_fit, fits = genetic_algorithm()
 
+    st.info(f"El valor máximo de Z es :green[**{fitness(best_fit)}**] con la solución :orange[**${best_fit}**].")
+
     fig, ax = plt.subplots()
     ax.plot(fits)
     st.pyplot(fig)
 
-    st.info(f"El valor máximo de Z es :green[**{fitness(best_fit)}**] con la solución :orange[**${best_fit}**].")
+    
 
 with annealing:
     INITIAL_TEMPERATURE = st.number_input("Temperatura inicial", min_value=2, max_value=10000, value=1000, step=1)
